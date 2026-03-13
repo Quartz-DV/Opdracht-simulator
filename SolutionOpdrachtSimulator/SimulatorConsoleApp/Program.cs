@@ -12,11 +12,19 @@ namespace SimulatorConsoleApp
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             var config = builder.Build();
+
             string connectionstring = config.GetConnectionString("SQLConnection");
+
             string sourcefile = config.GetSection("AppSettings")["sourcefile"];
-            string newSourceFile = config.GetSection("AppSettings")["newSourceFile"];
+            string sourceFileAdres = config.GetSection("AppSettings")["sourceFileAdres"];
+            string sourceFileFamilienamen = config.GetSection("AppSettings")["sourceFileFamilieNamen"];
+            string sourceFileMannennamen = config.GetSection("AppSettings")["sourceFileMannenNamen"];
+            string sourceFileVrouwennamen = config.GetSection("AppSettings")["sourceFileVrouwenNamen"];
+            string sourceFilePostcodes = config.GetSection("AppSettings")["sourceFilePostcodes"];
+
             string sourceFileType = config.GetSection("AppSettings")["sourceFileType"];
-            string newSourceFileType = config.GetSection("AppSettings")["newSourceFileType"];
+            string sourceFileAdresType = config.GetSection("AppSettings")["sourceFileAdresType"];
+            string sourceFileDataType = config.GetSection("AppSettings")["sourceFileDataType"];
             string databaseType = config.GetSection("AppSettings")["databaseType"];
 
             SimulatorManager manager = new SimulatorManager(RepositoryFactory.GeefRepository(databaseType, connectionstring));
