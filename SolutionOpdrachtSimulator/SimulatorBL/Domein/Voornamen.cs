@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SimulatorBL.Domein {
-<<<<<<< HEAD
-    public class Voornamen {
+    public class VoorNamen {
 
-        public Voornamen(string vrouwenNamen,string mannenNamen) {
+        public VoorNamen(string vrouwenNamen, string mannenNamen) {
 
             VrouwenNamen = vrouwenNamen;
             MannenNamen = mannenNamen;
@@ -19,8 +18,5 @@ namespace SimulatorBL.Domein {
         public string MannenNamen { get; set; }
 
 
-=======
-    public class VoorNamen {
->>>>>>> 5dd8723b1beb1cc69a884330869fbda340439078
     }
 }

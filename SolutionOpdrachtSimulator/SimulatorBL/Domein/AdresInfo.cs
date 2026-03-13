@@ -5,28 +5,21 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-<<<<<<< HEAD
+
 namespace SimulatorBL.Domein {
-    public class AdresInfo {
-
-        public AdresInfo(string gemeente,int postcode,string straatNaam) {
-
+    public class AdresInfo
+    {
+        public AdresInfo(string gemeente, int postcode, string straatNaam)
+        {
             Gemeente = gemeente;
             Postcode = postcode;
             StraatNaam = straatNaam;
-           
         }
 
         public string Gemeente { get; set; }
         public int Postcode { get; set; }
         public string StraatNaam { get; set; }
-        
-=======
-namespace SimulatorBL.Domein
-{
-    public class Gemeente
-    {
 
->>>>>>> 5dd8723b1beb1cc69a884330869fbda340439078
+
     }
 }
