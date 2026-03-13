@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimulatorBL\SimulatorBL.csproj" />
-    <ProjectReference Include="..\SimulatorDL\SimulatorDL.csproj" />
-    <ProjectReference Include="..\SimulatorDL_SQL\SimulatorDL_SQL.csproj" />
   </ItemGroup>
 
 </Project>
