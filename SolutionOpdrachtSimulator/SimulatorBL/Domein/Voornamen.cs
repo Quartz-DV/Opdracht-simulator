@@ -5,6 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SimulatorBL.Domein {
-    internal class Voornamen {
+    public class Voornamen {
+
+        public Voornamen(string vrouwenNamen,string mannenNamen) {
+
+            VrouwenNamen = vrouwenNamen;
+            MannenNamen = mannenNamen;
+
+        }
+
+        public string VrouwenNamen { get; set; }
+        public string MannenNamen { get; set; }
+
+
     }
 }

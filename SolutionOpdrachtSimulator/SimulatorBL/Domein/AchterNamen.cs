@@ -5,6 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SimulatorBL.Domein {
-    internal class FamilieNamen {
+    public class AchterNamen {
+
+        public AchterNamen(string familieNamen) {
+
+            FamilieNamen = familieNamen;
+        
+            
+        }
+
+        public string FamilieNamen { get; set; }
     }
 }
