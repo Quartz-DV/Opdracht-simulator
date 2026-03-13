@@ -25,5 +25,15 @@ namespace SimulatorUI
         {
 
         }
+
+        private void TitleCard_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void DescriptionCard_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
