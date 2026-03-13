@@ -1,7 +1,0 @@
-CREATE TABLE klant(
-Klant_Id int IDENTITY(1,1) NOT NULL,
-Voornaam nvarchar(50) NOT NULL,
-Adres_Id int NOT NULL,
-
-CONSTRAINT PK_Klant PRIMARY KEY CLUSTERED (Klant_Id ASC),
-CONSTRAINT FK_Adres FOREIGN KEY (Adres_Id) REFERENCES Adres (Adres_Id))
