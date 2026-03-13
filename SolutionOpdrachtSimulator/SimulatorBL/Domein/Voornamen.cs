@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SimulatorBL.Domein {
-    internal class Voornamen {
+    public class VoorNamen {
     }
 }
