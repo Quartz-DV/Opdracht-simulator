@@ -1,6 +1,6 @@
 ﻿namespace SimulatorDL
 {
-    public class Class1
+    public class InlezenBestand
     {
 
     }
