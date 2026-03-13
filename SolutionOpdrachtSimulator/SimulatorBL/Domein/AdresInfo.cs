@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulatorBL.Domein {
-    internal class Gemeente {
+namespace SimulatorBL.Domein
+{
+    public class Gemeente
+    {
+
     }
 }
