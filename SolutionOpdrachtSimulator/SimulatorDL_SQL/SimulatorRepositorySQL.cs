@@ -11,9 +11,32 @@ namespace SimulatorDL_SQL
     {
         string connectionstring;
 
-        public SimulatorRepositorySQL(string connectionstring) { 
+        public SimulatorRepositorySQL(string connectionstring)
+        {
             this.connectionstring = connectionstring;
         }
+
+        public VoorNamen GetVoorNaamMan(string naam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VoorNamen> GetVoorNaamMannen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public VoorNamen GetVoorNaamVrouw(string naam)
+            return _repo.GetVoornaamVrouw(string naam); 
+
+        }
+
+
+        
+
+    
+
+
 
         public List<VoorNamen> GetVoorNaamMannen(int aantal)
         {
@@ -25,7 +48,7 @@ namespace SimulatorDL_SQL
             throw new NotImplementedException();
         }
 
-        public void importData ()
+        public void importData()
         {
             string GemeenteQuery = "INSERT INTO Gemeente (Gemeente_Id, Gemeentenaam, Postcode) VALUES (@gemeente_id, @gemeentenaam, @postcode)";
             string AdresQuery = "INSERT INTO Adres (Adres_Id, Straatnaam, Gemeente_Id) VALUES (@adres_id, @straatnaam; @gemeente_id)";
@@ -36,7 +59,7 @@ namespace SimulatorDL_SQL
             using (SqlCommand cmdAdres = conn.CreateCommand())
             using (SqlCommand cmdKlant = conn.CreateCommand())
             {
-                conn.Open ();
+                conn.Open();
                 SqlTransaction transaction = conn.BeginTransaction();
 
                 cmdGemeente.Transaction = transaction;
@@ -49,9 +72,7 @@ namespace SimulatorDL_SQL
                 cmdGemeente.Parameters.Add(new SqlParameter("@postcode", SqlDbType.Int));
 
                 cmdAdres.CommandText = AdresQuery;
-                cmdAdres.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
-                cmdAdres.Parameters.Add(new SqlParameter("@straatnaam", SqlDbType.NVarChar));
-                cmdAdres.Parameters.Add(new SqlParameter("@gemeente_id", SqlDbType.Int));
+        }
 
                 cmdKlant.CommandText = KlantQuery;
                 cmdKlant.Parameters.Add(new SqlParameter("@klant_id", SqlDbType.Int));
@@ -61,11 +82,15 @@ namespace SimulatorDL_SQL
                 cmdKlant.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
 
             }
-     
+            try
+            {
+
+
+
+
+
+            } catch
 
 
     }
-
-
-
 }
