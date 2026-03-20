@@ -11,6 +11,7 @@ namespace SimulatorBL.Managers
     public class SimulatorManager
     {
         private ISimulatorRepository _repo;
+        private int _aantalKlanten;
         public SimulatorManager(ISimulatorRepository repo)
         {
             this._repo = repo;
@@ -34,6 +35,16 @@ namespace SimulatorBL.Managers
         public VoorNamen GetVoorNaamMan(string naam) 
         {
             return _repo.GetVoorNaamMan(naam);
+        }
+
+        public List<AchterNamen> GetAchterNamen(int aantal)
+        {
+            return _repo.GetAchterNamen(aantal);
+        }
+
+        internal List<AdresInfo> GetAdresInfo(int aantal)
+        {
+            return _repo.GetAdresInfo(aantal);
         }
     }
 }

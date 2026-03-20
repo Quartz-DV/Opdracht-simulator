@@ -8,5 +8,7 @@ namespace SimulatorBL.Interfaces
         VoorNamen GetVoorNaamVrouw(string naam);
         List<VoorNamen> GetVoorNaamMannen(int aantal);
         List<VoorNamen> GetVoorNaamVrouwen(int aantal);
+        List<AchterNamen> GetAchterNamen(int aantal);
+        List<AdresInfo> GetAdresInfo(int aantal);
     }
 }

@@ -24,6 +24,16 @@ namespace SimulatorDL_SQL {
             this.connectionstring = connectionstring;
         }
 
+        public List<AchterNamen> GetAchterNamen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<AdresInfo> GetAdresInfo(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
         public VoorNamen GetVoorNaamMan(string naam)
         {
             throw new NotImplementedException();
