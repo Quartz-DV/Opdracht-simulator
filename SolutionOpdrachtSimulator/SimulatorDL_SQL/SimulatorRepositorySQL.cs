@@ -15,60 +15,25 @@ namespace SimulatorDL_SQL
             this.connectionstring = connectionstring;
         }
 
-        public List<VoorNamen> GeefvoornamenMan(string naam)
+        public VoorNamen GetvoornaamMan(string naam)
         {
-            string sql = "SELECT [VoornaamMan] FROM klant";
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = conn.CreateCommand())
-            {
-                List<VoorNamen> MannenNamen = new();
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@naam", naam);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    MannenNamen.Add(new VoorNamen(
-                        (string)reader["VoornaamMan"]));
-
-                }
-                return MannenNamen;
-            }
+            
 
         }
 
 
 
-        public List<VoorNamen> GeefVoornamenVrouw(string naam)
-        {
-            string sql = "SELECT [VoornaamVrouw] FROM klant";
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = conn.CreateCommand())
-            {
-                List<VoorNamen> VrouwenNamen = new();
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("@naam", naam);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    VrouwenNamen.Add(new VoorNamen(
-                        (string)reader["VoornaamVrouw"]));
-
-                }
-                return VrouwenNamen;
-            }
-
-        }
-
-
-        }
-
-        public List<AchterNamen> GeefFamilienamen(string naam)
+        public VoorNamen GetVoornaamVrouw(string naam)
         {
 
+            return _repo.GetVoornaamVrouw(string naam); 
 
         }
+
+
+        
+
+    
 
 
 
@@ -108,7 +73,14 @@ namespace SimulatorDL_SQL
                 cmdKlant.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
 
             }
+            try
+            {
 
+
+
+
+
+            } catch
 
 
     }
