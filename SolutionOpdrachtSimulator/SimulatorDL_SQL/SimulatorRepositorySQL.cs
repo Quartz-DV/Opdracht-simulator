@@ -11,33 +11,22 @@ namespace SimulatorDL_SQL
     {
         string connectionstring;
 
-        public SimulatorRepositorySQL(string connectionstring) { 
+        public SimulatorRepositorySQL(string connectionstring)
+        {
             this.connectionstring = connectionstring;
         }
 
-        public VoorNamen GetvoornaamMan(string naam)
+        public VoorNamen GetVoorNaamMan(string naam)
         {
-            
-
+            throw new NotImplementedException();
         }
-
-
-
-        public VoorNamen GetVoornaamVrouw(string naam)
-        {
-
-            return _repo.GetVoornaamVrouw(string naam); 
-
-        }
-
-
-        
-
-    
-
-
 
         public List<VoorNamen> GetVoorNaamMannen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public VoorNamen GetVoorNaamVrouw(string naam)
         {
             throw new NotImplementedException();
         }
@@ -47,7 +36,7 @@ namespace SimulatorDL_SQL
             throw new NotImplementedException();
         }
 
-        public void importData ()
+        public void importData()
         {
             string GemeenteQuery = "INSERT INTO Gemeente (Gemeente_Id, Gemeentenaam, Postcode) VALUES (@gemeente_id, @gemeentenaam, @postcode)";
             string AdresQuery = "INSERT INTO Adres (Adres_Id, Straatnaam, Gemeente_Id) VALUES (@adres_id, @straatnaam; @gemeente_id)";
@@ -58,7 +47,7 @@ namespace SimulatorDL_SQL
             using (SqlCommand cmdAdres = conn.CreateCommand())
             using (SqlCommand cmdKlant = conn.CreateCommand())
             {
-                conn.Open ();
+                conn.Open();
                 SqlTransaction transaction = conn.BeginTransaction();
 
                 cmdGemeente.Transaction = transaction;
@@ -83,18 +72,6 @@ namespace SimulatorDL_SQL
                 cmdKlant.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
 
             }
-            try
-            {
-
-
-
-
-
-            } catch
-
-
+        }
     }
-
-
-
 }
