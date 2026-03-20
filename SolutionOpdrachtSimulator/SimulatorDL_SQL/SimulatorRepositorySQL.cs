@@ -27,18 +27,6 @@ namespace SimulatorDL_SQL
         }
 
         public VoorNamen GetVoorNaamVrouw(string naam)
-            return _repo.GetVoornaamVrouw(string naam); 
-
-        }
-
-
-        
-
-    
-
-
-
-        public List<VoorNamen> GetVoorNaamMannen(int aantal)
         {
             throw new NotImplementedException();
         }
@@ -72,7 +60,9 @@ namespace SimulatorDL_SQL
                 cmdGemeente.Parameters.Add(new SqlParameter("@postcode", SqlDbType.Int));
 
                 cmdAdres.CommandText = AdresQuery;
-        }
+                cmdAdres.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
+                cmdAdres.Parameters.Add(new SqlParameter("@straatnaam", SqlDbType.NVarChar));
+                cmdAdres.Parameters.Add(new SqlParameter("@gemeente_id", SqlDbType.Int));
 
                 cmdKlant.CommandText = KlantQuery;
                 cmdKlant.Parameters.Add(new SqlParameter("@klant_id", SqlDbType.Int));
@@ -82,15 +72,8 @@ namespace SimulatorDL_SQL
                 cmdKlant.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
 
             }
-            try
-            {
 
-
-
-
-
-            } catch
-
+        }
 
     }
 }
