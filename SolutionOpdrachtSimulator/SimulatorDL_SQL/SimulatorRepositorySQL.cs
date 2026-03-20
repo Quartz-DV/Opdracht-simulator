@@ -1,5 +1,9 @@
-﻿using SimulatorBL.Interfaces;
+﻿using SimulatorBL.Domein;
+using SimulatorBL.Interfaces;
 using System.Data;
+using Microsoft.Data.SqlClient;
+using System.Reflection.Metadata;
+
 
 namespace SimulatorDL_SQL
 {
@@ -10,6 +14,63 @@ namespace SimulatorDL_SQL
         public SimulatorRepositorySQL(string connectionstring) { 
             this.connectionstring = connectionstring;
         }
+
+        public List<VoorNamen> GeefvoornamenMan(string naam)
+        {
+            string sql = "SELECT [VoornaamMan] FROM klant";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                List<VoorNamen> MannenNamen = new();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@naam", naam);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    MannenNamen.Add(new VoorNamen(
+                        (string)reader["VoornaamMan"]));
+
+                }
+                return MannenNamen;
+            }
+
+        }
+
+
+
+        public List<VoorNamen> GeefVoornamenVrouw(string naam)
+        {
+            string sql = "SELECT [VoornaamVrouw] FROM klant";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                List<VoorNamen> VrouwenNamen = new();
+                cmd.CommandText = sql;
+                cmd.Parameters.AddWithValue("@naam", naam);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    VrouwenNamen.Add(new VoorNamen(
+                        (string)reader["VoornaamVrouw"]));
+
+                }
+                return VrouwenNamen;
+            }
+
+        }
+
+
+        }
+
+        public List<AchterNamen> GeefFamilienamen(string naam)
+        {
+
+
+        }
+
+
 
         public void importData ()
         {
