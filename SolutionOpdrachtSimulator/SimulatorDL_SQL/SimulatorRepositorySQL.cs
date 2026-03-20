@@ -1,16 +1,52 @@
-﻿using SimulatorBL.Interfaces;
+﻿using SimulatorBL.Domein;
+using SimulatorBL.Interfaces;
 using System.Data;
 using Microsoft.Data.SqlClient;
+<<<<<<< HEAD
+=======
+using System.Reflection.Metadata;
+
+>>>>>>> 2e3bdc4b1943aee8c03525648cb03a40e4cac820
 
 namespace SimulatorDL_SQL {
     public class SimulatorRepositorySQL : ISimulatorRepository {
         string connectionstring;
 
+<<<<<<< HEAD
         public SimulatorRepositorySQL(string connectionstring) {
             this.connectionstring = connectionstring;
         }
 
         public void importData() {
+=======
+        public SimulatorRepositorySQL(string connectionstring)
+        {
+            this.connectionstring = connectionstring;
+        }
+
+        public VoorNamen GetVoorNaamMan(string naam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VoorNamen> GetVoorNaamMannen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public VoorNamen GetVoorNaamVrouw(string naam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VoorNamen> GetVoorNaamVrouwen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void importData()
+        {
+>>>>>>> 2e3bdc4b1943aee8c03525648cb03a40e4cac820
             string GemeenteQuery = "INSERT INTO Gemeente (Gemeente_Id, Gemeentenaam, Postcode) VALUES (@gemeente_id, @gemeentenaam, @postcode)";
             string AdresQuery = "INSERT INTO Adres (Adres_Id, Straatnaam, Gemeente_Id) VALUES (@adres_id, @straatnaam; @gemeente_id)";
             string KlantQuery = "INSERT INTO Klant (Klant_Id, Voornaam_Mannen, Voornaam_Vrouwen, Achternamen, Adres_Id) VALUES (@klant_id, @voornaam_mannen, @voornaam_vrouwen, @achternamen, @adres_id)";
@@ -18,7 +54,12 @@ namespace SimulatorDL_SQL {
             using (SqlConnection conn = new SqlConnection(connectionstring))
             using (SqlCommand cmdGemeente = conn.CreateCommand())
             using (SqlCommand cmdAdres = conn.CreateCommand())
+<<<<<<< HEAD
             using (SqlCommand cmdKlant = conn.CreateCommand()) {
+=======
+            using (SqlCommand cmdKlant = conn.CreateCommand())
+            {
+>>>>>>> 2e3bdc4b1943aee8c03525648cb03a40e4cac820
                 conn.Open();
                 SqlTransaction transaction = conn.BeginTransaction();
 
@@ -45,7 +86,7 @@ namespace SimulatorDL_SQL {
 
             }
 
-
+        }
 
         }
 

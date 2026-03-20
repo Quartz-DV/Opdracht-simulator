@@ -5,7 +5,7 @@ namespace SimulatorDL
 {
     public class InlezenBestand
     {
-        string zipPad = "..\\..\\Opdracht-simulator\\dataSim.zip";
+       
         string extractPad = "..\\..\\Opdracht-Simulator\\WegGeschrevenBestand";
         string para = "C:\\Users\\shiva\\Opdracht_Simulator\\Opdracht-simulator\\unzip\\dataSim";
 

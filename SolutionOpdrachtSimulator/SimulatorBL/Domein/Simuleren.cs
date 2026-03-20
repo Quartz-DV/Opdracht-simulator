@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimulatorBL.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,22 +20,28 @@ namespace SimulatorBL.Domein
         private int _minimumLeeftijd;
         private int _maximumLeeftijd;
 
-        public Simuleren(int minimumLeeftijd, int maximumLeeftijd)
+        public Simuleren(int minimumLeeftijd, int maximumLeeftijd, int aantalKlanten)
         {
             _minimumLeeftijd = minimumLeeftijd;
             _maximumLeeftijd = maximumLeeftijd;
         }
 
-        
-        //public void RandomGeboortedatum()
-        //{
-        //   // DateTime.Now() - (maximumLeeftijd/minimumLeeftijd) voor geboortedatum
-        //   int leeftijd = _rand.Next(_minimumLeeftijd, _maximumLeeftijd);
-        //    DateTime dateTime = DateTime.Now;
-        //    DateTime leeftijdJaar = new DateTime(leeftijd, 0, 0);
-        //    TimeSpan geboorteDatum = dateTime - leeftijdJaar;
+
+        public void RandomGeboortedatum()
+        {
+            // DateTime.Now() - (maximumLeeftijd/minimumLeeftijd) voor geboortedatum
+            int leeftijd = _rand.Next(_minimumLeeftijd, _maximumLeeftijd);
+            DateTime dateTime = DateTime.Now;
+            DateTime leeftijdJaar = new DateTime(leeftijd, 0, 0);
             
-        //}
-        
+            var dateTimeTicks = dateTime.Ticks;
+            var leeftijdTicks = leeftijdJaar.Ticks;
+
+            var dateTicks = dateTimeTicks - leeftijdTicks;
+            DateTime randomBday = new DateTime(dateTicks);
+
+            geboortedata.Add(randomBday);
+        }
+
     }
 }

@@ -15,7 +15,6 @@ namespace SimulatorConsoleApp
 
             string connectionstring = config.GetConnectionString("SQLConnection");
 
-            string sourcefile = config.GetSection("AppSettings")["sourcefile"];
             string sourceFileAdres = config.GetSection("AppSettings")["sourceFileAdres"];
             string sourceFileFamilienamen = config.GetSection("AppSettings")["sourceFileFamilieNamen"];
             string sourceFileMannennamen = config.GetSection("AppSettings")["sourceFileMannenNamen"];
