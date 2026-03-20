@@ -15,28 +15,6 @@ namespace SimulatorDL_SQL
             this.connectionstring = connectionstring;
         }
 
-        public VoorNamen GetvoornaamMan(string naam)
-        {
-            
-
-        }
-
-
-
-        public VoorNamen GetVoornaamVrouw(string naam)
-        {
-
-            return _repo.GetVoornaamVrouw(string naam); 
-
-        }
-
-
-        
-
-    
-
-
-
         public List<VoorNamen> GetVoorNaamMannen(int aantal)
         {
             throw new NotImplementedException();
@@ -83,14 +61,7 @@ namespace SimulatorDL_SQL
                 cmdKlant.Parameters.Add(new SqlParameter("@adres_id", SqlDbType.Int));
 
             }
-            try
-            {
-
-
-
-
-
-            } catch
+     
 
 
     }
