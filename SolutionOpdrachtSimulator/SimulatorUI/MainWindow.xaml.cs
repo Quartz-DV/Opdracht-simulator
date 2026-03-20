@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.ComponentModel;
 
 namespace SimulatorUI
 {
@@ -35,5 +37,37 @@ namespace SimulatorUI
         {
 
         }
+
+        private void ManCheck_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Mannen toegestaan of niet.
+        }
+
+        private void VrouwCheck_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Vrouwen toegestaan of niet.
+        }
+
+        private void SelectFolderButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFolderDialog();
+        }
+
+        /*Not yet implemented:
+        private void OpenFolderDialog()
+        {
+            var dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true,
+                Title = "Kies een folder"
+            };
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                string folderPath = dialog.FileName;
+            }
+        }
+        */
+
     }
 }
