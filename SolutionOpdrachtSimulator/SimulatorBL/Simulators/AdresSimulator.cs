@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulatorBL.Domein {
-    public class Klant {
-        
-
+namespace SimulatorBL.Simulators
+{
+    public class AdresSimulator
+    {
     }
 }
