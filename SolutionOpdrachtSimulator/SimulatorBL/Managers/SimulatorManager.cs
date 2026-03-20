@@ -1,4 +1,5 @@
-﻿using SimulatorBL.Interfaces;
+﻿using SimulatorBL.Domein;
+using SimulatorBL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,26 @@ namespace SimulatorBL.Managers
         public SimulatorManager(ISimulatorRepository repo)
         {
             this._repo = repo;
+        }
+
+        public List<VoorNamen> GetVoorNaamMannen(int aantal)
+        {
+            return _repo.GetVoorNaamMannen(aantal);
+        }
+
+        public List<VoorNamen> GetVoorNaamVrouwen(int aantal)
+        {
+            return _repo.GetVoorNaamVrouwen(aantal);
+        }
+
+        public VoorNamen GetVoorNaamVrouw(string naam)
+        {
+            return _repo.GetVoorNaamVrouw(naam);
+        }
+
+        public VoorNamen GetVoorNaamMan(string naam) 
+        {
+            return _repo.GetVoorNaamMan(naam);
         }
     }
 }

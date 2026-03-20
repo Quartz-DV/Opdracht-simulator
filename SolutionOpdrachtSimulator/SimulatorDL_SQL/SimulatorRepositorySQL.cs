@@ -37,13 +37,23 @@ namespace SimulatorDL_SQL
 
 
 
+        public List<VoorNamen> GetVoorNaamMannen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<VoorNamen> GetVoorNaamVrouwen(int aantal)
+        {
+            throw new NotImplementedException();
+        }
+
         public void importData ()
         {
             string GemeenteQuery = "INSERT INTO Gemeente (Gemeente_Id, Gemeentenaam, Postcode) VALUES (@gemeente_id, @gemeentenaam, @postcode)";
             string AdresQuery = "INSERT INTO Adres (Adres_Id, Straatnaam, Gemeente_Id) VALUES (@adres_id, @straatnaam; @gemeente_id)";
             string KlantQuery = "INSERT INTO Klant (Klant_Id, Voornaam_Mannen, Voornaam_Vrouwen, Achternamen, Adres_Id) VALUES (@klant_id, @voornaam_mannen, @voornaam_vrouwen, @achternamen, @adres_id)";
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionstring))
             using (SqlCommand cmdGemeente = conn.CreateCommand())
             using (SqlCommand cmdAdres = conn.CreateCommand())
             using (SqlCommand cmdKlant = conn.CreateCommand())
