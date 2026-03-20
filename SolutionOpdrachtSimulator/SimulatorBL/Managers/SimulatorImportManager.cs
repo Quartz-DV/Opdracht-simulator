@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimulatorBL.Managers {
-    internal class SimulatorImportBeheerder {
+namespace SimulatorBL.Managers
+{
+    public class SimulatorImportManager
+    {
     }
 }

@@ -26,7 +26,7 @@ namespace SimulatorConsoleApp
             string sourceFileDataType = config.GetSection("AppSettings")["sourceFileDataType"];
             string databaseType = config.GetSection("AppSettings")["databaseType"];
 
-            SimulatorBeheerder manager = new SimulatorBeheerder(RepositoryFactory.GeefRepository(databaseType, connectionstring));
+            SimulatorManager manager = new SimulatorManager(RepositoryFactory.GeefRepository(databaseType, connectionstring));
         }
     }
 }
